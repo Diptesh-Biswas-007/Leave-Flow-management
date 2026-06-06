@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LeaveFlow — Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="shared.css"/>
+  <link rel="stylesheet" href="dashboard.css"/>
+</head>
+<body>
+
+<!-- ══ SIDEBAR ══ -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-brand">
+    <div class="brand-icon">LF</div>
+    <div class="brand-text">LeaveFlow</div>
+  </div>
+
+  <nav class="sidebar-nav">
+    <ul class="list-unstyled mb-2">
+      <li class="nav-section-label">Main</li>
+      <li class="nav-item">
+        <a href="#" class="nav-link active" data-page="dashboard">
+          <i class="bi bi-grid-1x2-fill"></i><span class="link-label">Dashboard</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link" data-page="apply">
+          <i class="bi bi-calendar-plus"></i><span class="link-label">Apply Leave</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link" data-page="history">
+          <i class="bi bi-clock-history"></i><span class="link-label">Leave History</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link" data-page="notifications">
+          <i class="bi bi-bell"></i><span class="link-label">Notifications</span>
+          <span class="badge-pill">3</span>
+        </a>
+      </li>
+    </ul>
+    <ul class="list-unstyled mb-2">
+      <li class="nav-section-label">Management</li>
+      <li class="nav-item">
+        <a href="#" class="nav-link" data-page="team">
+          <i class="bi bi-people-fill"></i><span class="link-label">Team Calendar</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link" data-page="approvals">
+          <i class="bi bi-check2-square"></i><span class="link-label">Approvals</span>
+          <span class="badge-pill">2</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link" data-page="reports">
+          <i class="bi bi-bar-chart-fill"></i><span class="link-label">Reports</span>
+        </a>
+      </li>
+    </ul>
+    <ul class="list-unstyled">
+      <li class="nav-section-label">Account</li>
+      <li class="nav-item">
+        <a href="#" class="nav-link" data-page="profile">
+          <i class="bi bi-person-fill"></i><span class="link-label">Profile</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link" data-page="settings">
+          <i class="bi bi-gear-fill"></i><span class="link-label">Settings</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="sidebar-footer">
+    <div class="user-chip">
+      <div class="user-avatar">DB</div>
+      <div class="user-info">
+        <div class="user-name">Loading...</div>
+        <div class="user-role"></div>
+      </div>
+    </div>
+    <button class="logout-btn" onclick="handleLogout()">
+      <i class="bi bi-box-arrow-left"></i>
+      <span class="link-label">Sign Out</span>
+    </button>
+  </div>
+</aside>
+
+<!-- Desktop collapse toggle -->
+<button class="sidebar-toggle-btn d-none d-lg-flex" id="desktopToggle">
+  <i class="bi bi-chevron-left" id="toggleIcon"></i>
+</button>
+
+<!-- Mobile overlay -->
+<div class="sidebar-overlay" id="overlay"></div>
+
+<!-- ══ MAIN WRAP ══ -->
+<div class="main-wrap" id="mainWrap">
+
+  <!-- HEADER -->
+  <header class="top-header">
+    <button class="mobile-menu-btn d-lg-none" id="mobileMenuBtn">
+      <i class="bi bi-list"></i>
+    </button>
+    <span class="header-title d-none d-sm-inline" id="headerTitle">Dashboard</span>
+    <div class="header-right">
+      <div class="header-icon-btn" title="Notifications" onclick="navTo('notifications')">
+        <i class="bi bi-bell"></i>
+        <span class="notif-dot"></span>
+      </div>
+      <button class="apply-btn" onclick="navTo('apply')">
+        <i class="bi bi-plus-lg me-1"></i>Apply Leave
+      </button>
+      <div class="user-avatar"
+           style="width:36px;height:36px;font-size:.75rem;background:var(--accent2);color:var(--ink);cursor:pointer;"
+           onclick="navTo('profile')" title="Profile">DB</div>
+    </div>
+  </header>
+
+  <!-- PAGE CONTENT (SPA) -->
+  <main class="page-content" id="pageContent">
+    <div class="empty-state">
+      <i class="bi bi-arrow-repeat spin" style="font-size:2rem;color:var(--accent);"></i>
+      <p>Loading...</p>
+    </div>
+  </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LeaveFlow — Login</title>
+
+  <!-- External Libraries -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+
+  <!-- Project Stylesheets -->
+  <link rel="stylesheet" href="shared.css"/>
+  <link rel="stylesheet" href="login.css"/>
+</head>
+<body>
+
+  <!-- ══ LEFT BRAND PANEL ══ -->
+  <div class="brand-panel d-none d-md-flex flex-column">
+    <div class="brand-grid"></div>
+
+    <div class="brand-logo">
+      <span>LF</span> LeaveFlow
+    </div>
+
+    <div class="brand-headline">
+      <h1>Manage<br/>Leave,<br/><em>Effortlessly.</em></h1>
+      <p>Your all-in-one portal for tracking, applying, and approving employee leave requests.</p>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat-item">
+        <div class="num">12K+</div>
+        <div class="label">Employees</div>
+      </div>
+      <div class="stat-item">
+        <div class="num">98%</div>
+        <div class="label">Approval rate</div>
+      </div>
+      <div class="stat-item">
+        <div class="num">24h</div>
+        <div class="label">Avg response</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ RIGHT FORM PANEL ══ -->
+  <div class="form-panel">
+    <div class="login-card">
+
+      <!-- Mobile logo -->
+      <div class="d-flex d-md-none align-items-center gap-2 mb-4">
+        <div class="brand-logo" style="color: var(--ink);">
+          <span>LF</span> LeaveFlow
+        </div>
+      </div>
+
+      <div class="card-eyebrow">Employee Portal</div>
+      <h2>Welcome back</h2>
+      <p class="sub">Sign in to manage your leave requests</p>
+
+      <form id="loginForm" novalidate>
+
+        <!-- Employee ID / Email -->
+        <div class="mb-3">
+          <label for="empId" class="form-label">Employee ID or Email</label>
+          <input
+            type="text"
+            class="form-control"
+            id="empId"
+            placeholder="e.g. EMP-1042 or you@company.com"
+            required
+          />
+          <div class="invalid-feedback" id="empIdFeedback">
+            Please enter your Employee ID or a valid email address.
+          </div>
+        </div>
+
+        <!-- Password -->
+        <div class="mb-1">
+          <label for="password" class="form-label">Password</label>
+          <div class="input-group">
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              placeholder="Enter your password"
+              required
+            />
+            <span class="input-group-text" id="togglePwd" title="Show/hide password">
+              <i class="bi bi-eye" id="eyeIcon"></i>
+            </span>
+            <div class="invalid-feedback" id="pwdFeedback">Password is required.</div>
+          </div>
+        </div>
+
+        <!-- Forgot password -->
+        <div class="d-flex justify-content-end mb-3 mt-2">
+          <a href="#" class="forgot-link" onclick="showForgot(event)">Forgot password?</a>
+        </div>
+
+        <!-- Submit -->
+        <button type="submit" class="btn-login mb-3">
+          <span>Sign In &nbsp;<i class="bi bi-arrow-right"></i></span>
+        </button>
+
+        <div id="loginAlert" class="alert alert-danger d-none py-2 px-3" style="font-size:0.82rem; border-radius:10px;">
+          <i class="bi bi-exclamation-circle me-1"></i>
+          <span>Invalid credentials. Please try again.</span>
+        </div>
+
+      </form>
+
+      <div class="divider-text">new here?</div>
+
+      <a href="/signup" class="btn-login" style="text-decoration:none;display:block;text-align:center;">
+        <span>Create an Account &nbsp;<i class="bi bi-person-plus"></i></span>
+      </a>
+
+      <div class="employee-note mt-3">
+        <i class="bi bi-info-circle-fill"></i>
+        <span>Contact your HR administrator if you need help with your Employee ID.</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Login Logic -->
+  <script src="login.js"></script>
+</body>
+</html>

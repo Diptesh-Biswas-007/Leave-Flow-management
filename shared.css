@@ -1,0 +1,130 @@
+/* ══════════════════════════════════════════
+   LeaveFlow — Shared Styles
+   Used by: login.html, dashboard.html
+══════════════════════════════════════════ */
+
+/* ── CSS Variables ── */
+:root {
+  --ink:       #0d0d14;
+  --paper:     #f5f3ee;
+  --accent:    #e8490f;
+  --accent2:   #f5a623;
+  --accent3:   #2ecc98;
+  --muted:     #7a7a8c;
+  --card-bg:   #ffffff;
+  --border:    #e2e0da;
+}
+
+/* ── Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Base ── */
+body {
+  font-family: 'DM Sans', sans-serif;
+  background-color: var(--paper);
+  color: var(--ink);
+}
+
+/* ── Shared Form Controls ── */
+.form-label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 0.4rem;
+  letter-spacing: 0.02em;
+}
+
+.form-control,
+.form-select {
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  font-family: 'DM Sans', sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(232, 73, 15, 0.12);
+  background: #fff;
+  outline: none;
+}
+
+.form-control.is-invalid {
+  border-color: #dc3545;
+  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1);
+}
+
+.invalid-feedback {
+  font-size: 0.78rem;
+}
+
+/* ── Shared Button Styles ── */
+.btn-dark-custom {
+  background: var(--ink);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 0.6rem 1.25rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.btn-dark-custom:hover {
+  background: var(--accent);
+  transform: translateY(-1px);
+  color: #fff;
+}
+
+.btn-outline-custom {
+  border: 1.5px solid var(--border);
+  color: var(--muted);
+  border-radius: 10px;
+  font-family: 'Syne', sans-serif;
+  font-size: 0.85rem;
+  padding: 0.6rem 1.25rem;
+  background: transparent;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.btn-outline-custom:hover {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+/* ── Shared Modal Styles ── */
+.modal-content {
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  font-family: 'DM Sans', sans-serif;
+}
+
+.modal-header {
+  border-bottom: 1px solid var(--border);
+  padding: 1.25rem 1.5rem;
+}
+
+.modal-title {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 1.05rem;
+  letter-spacing: -0.02em;
+}
+
+.modal-body  { padding: 1.5rem; }
+.modal-footer {
+  border-top: 1px solid var(--border);
+  padding: 1rem 1.5rem;
+}

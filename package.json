@@ -1,0 +1,13 @@
+{
+  "name": "leaveflow",
+  "version": "1.0.0",
+  "description": "LeaveFlow — Employee Leave Management Portal",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-session": "^1.17.3"
+  }
+}

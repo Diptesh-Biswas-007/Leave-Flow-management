@@ -1,0 +1,318 @@
+/* ══════════════════════════════════════════
+   LeaveFlow — Login Page Styles
+   Depends on: shared.css
+══════════════════════════════════════════ */
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: stretch;
+  overflow: hidden;
+}
+
+/* ── Left Brand Panel ── */
+.brand-panel {
+  flex: 0 0 48%;
+  background: var(--ink);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 3rem 3.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.brand-panel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 20% 80%, rgba(232,73,15,0.35) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 80% 20%, rgba(245,166,35,0.2)  0%, transparent 70%);
+  pointer-events: none;
+}
+
+.brand-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* ── Logo ── */
+.brand-logo {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.03em;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.brand-logo span {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+  font-size: 0.95rem;
+}
+
+/* ── Headline ── */
+.brand-headline {
+  position: relative;
+  z-index: 1;
+}
+
+.brand-headline h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(2.5rem, 4vw, 3.8rem);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  margin-bottom: 1.25rem;
+}
+
+.brand-headline h1 em {
+  font-style: normal;
+  color: var(--accent);
+}
+
+.brand-headline p {
+  color: rgba(255,255,255,0.5);
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.6;
+  max-width: 340px;
+}
+
+/* ── Stat Row ── */
+.stat-row {
+  display: flex;
+  gap: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.stat-item {
+  border-top: 1px solid rgba(255,255,255,0.12);
+  padding-top: 1rem;
+}
+
+.stat-item .num {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.stat-item .label {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 0.1rem;
+}
+
+/* ── Right Form Panel ── */
+.form-panel {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: var(--paper);
+  position: relative;
+}
+
+.form-panel::before {
+  content: '';
+  position: absolute;
+  top: -120px;
+  right: -120px;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(232,73,15,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ── Login Card ── */
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 2.75rem 2.5rem;
+  box-shadow: 0 8px 40px rgba(13,13,20,0.08);
+  position: relative;
+  z-index: 1;
+  animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.login-card .card-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.login-card h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: -0.03em;
+  margin-bottom: 0.35rem;
+}
+
+.login-card .sub {
+  font-size: 0.875rem;
+  color: var(--muted);
+  margin-bottom: 2rem;
+}
+
+/* ── Input Group ── */
+.input-group .form-control {
+  border-right: none;
+  border-radius: 10px 0 0 10px !important;
+}
+
+.input-group-text {
+  background: transparent;
+  border: 1.5px solid var(--border);
+  border-left: none;
+  border-radius: 0 10px 10px 0 !important;
+  cursor: pointer;
+  color: var(--muted);
+  transition: color 0.2s;
+}
+
+.input-group-text:hover { color: var(--ink); }
+
+/* ── Login Button ── */
+.btn-login {
+  background: var(--ink);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 0.8rem 1rem;
+  font-family: 'Syne', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  width: 100%;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-login::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+  z-index: 0;
+}
+
+.btn-login:hover::after  { transform: scaleX(1); }
+.btn-login span          { position: relative; z-index: 1; }
+.btn-login:hover         { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(232,73,15,0.3); }
+.btn-login:active        { transform: translateY(0); }
+
+/* ── Forgot Link ── */
+.forgot-link {
+  color: var(--muted);
+  font-size: 0.82rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.forgot-link:hover { color: var(--accent); }
+
+/* ── Divider ── */
+.divider-text {
+  text-align: center;
+  position: relative;
+  color: var(--muted);
+  font-size: 0.78rem;
+  margin: 1.5rem 0;
+}
+
+.divider-text::before,
+.divider-text::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 40%;
+  height: 1px;
+  background: var(--border);
+}
+
+.divider-text::before { left: 0; }
+.divider-text::after  { right: 0; }
+
+/* ── Employee Note ── */
+.employee-note {
+  background: #fff8f0;
+  border: 1px solid rgba(232,73,15,0.15);
+  border-radius: 10px;
+  padding: 0.85rem 1rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.employee-note i {
+  color: var(--accent);
+  margin-top: 1px;
+  flex-shrink: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  body { flex-direction: column; overflow: auto; }
+
+  .brand-panel {
+    flex: 0 0 auto;
+    padding: 2rem 1.75rem;
+    min-height: 220px;
+  }
+
+  .brand-headline h1 { font-size: 2rem; }
+  .stat-row          { gap: 1.25rem; }
+  .stat-item .num    { font-size: 1.4rem; }
+
+  .form-panel { padding: 1.5rem 1rem 2rem; }
+  .login-card { padding: 2rem 1.5rem; }
+}
+
+/* ── Spinner for loading state ── */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+.spin {
+  display: inline-block;
+  animation: spin 0.7s linear infinite;
+}
